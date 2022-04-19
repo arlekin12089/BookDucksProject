@@ -1,3 +1,8 @@
+admin: test@test.se
+password: Test1234
+
+
+
 # BookDucksProject
 an application for a community called BookDucks that borrows / exchanges books and audiobooks on CD with each other
 ## Table of contents
@@ -7,6 +12,8 @@ an application for a community called BookDucks that borrows / exchanges books a
 * **addbook.html** --- a form to add a book
 * **addaudiobook.html** --- a form to add an audiobook
 * **profile.html** --- a profile page of user
+
+
 
 
 ### Home page:
