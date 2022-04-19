@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+		integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="styles/styles.css">
+	<title>Bookducks</title>
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header__inner">
+				<div class="logo">
+					<a href="../frontend/index.html">
+						<img src="../frontend/img/duck-logo.jpg" alt="Bookducks logo">
+					</a>
+				</div>
+				<div class="add-buttons">
+					<span id="addBookPage" class="btn btn--green">
+						<i class="fa fa-book" aria-hidden="true"></i> Add book
+					</span>
+					<span id="addAudioBookPage" class="btn btn--green">
+						<i class="fa fa-file-audio-o" aria-hidden="true"></i>Add audio-book
+					</span>
+				</div>
+				<div class="header__dropdown">
+					<button id="userProfile">
+						<i class="fa fa-user" aria-hidden="true"></i>
+					</button>
+					<div class="dropdown-content">
+						<p class="userName"></p>
+						<a href="register.html" class="register-link">Register</a>
+						<a href="login.html" class="login-link">Log In</a>
+						<a href="#" class="logout-link">Log Out</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+	<div class="container">
+	<div class="audio-wrap">
+		<h2>Add your audio-book here</h2>
+		<div class="addAudioBookForm">
+			<div class="form-field">
+				<label for="audioTitle">Audio-book title:</label>
+				<input type="text" id="audioTitle" class="input_field">
+			</div>
+		<div class="form-field">
+			<label for="audioAuthor">Author:</label>
+			<input type="text" id="audioAuthor" class="input_field">
+		</div>
+		<div class="form-field">
+			<label for="audioDuration">Duration:</label>
+			<input type="number" id="audioDuration" class="input_field">
+		</div>
+		<div class="form-field">
+			<label for="audioRelease">Release date:</label>
+			<input type="date" id="audioRelease" class="input_field">
+		</div>
+		<div class="form-field">
+			<label for="audioRating">Rating:</label>
+			<input type="number" min="0" max="10" id="audioRating" class="input_field">
+		</div>
+		<div class="form-field">
+			<label for="audioGenres">Genres:</label>
+			<div id="audioGenres">
+			</div>
+		</div>
+		<div class="form-field">
+			<label for="audioCover">Book cover:</label>
+			<input type="file" id="audioCover" class="input_field">
+		</div>
+		<button id="addAudioBtn" class="btn btn--green">Add audio-book</button>
+		</div>
+		</div>
+	</div>
+	</main>
+	<script src="script/header.js"></script>
+	<script type="module" src="script/addaudio.js"></script>
+</body>
+</html>

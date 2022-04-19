@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+		integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="styles/styles.css">
+	<title>Bookducks</title>
+</head>
+<body>
+<header class="header">
+		<div class="container">
+			<div class="header__inner">
+				<div class="logo">
+					<a href="../frontend/index.html">
+						<img src="../frontend/img/duck-logo.jpg" alt="Bookducks logo">
+					</a>
+				</div>
+				<div class="add-buttons">
+					<span id="addBookPage" class="btn btn--green">
+						<i class="fa fa-book" aria-hidden="true"></i> Add book
+					</span>
+					<span id="addAudioBookPage" class="btn btn--green">
+						<i class="fa fa-file-audio-o" aria-hidden="true"></i>Add audio-book
+					</span>
+				</div>
+				<div class="header__dropdown">
+					<button id="userProfile">
+						<i class="fa fa-user" aria-hidden="true"></i>
+					</button>
+					<div class="dropdown-content">
+						<p class="userName"></p>
+						<a href="register.html" class="register-link">Register</a>
+						<a href="login.html" class="login-link">Log In</a>
+						<a href="#" class="logout-link">Log Out</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+    <section class="registration__wrapper">
+      <form id="registration-form">
+		  <h1 class="login_text">Registration</h1>
+      <div class="registration__form">
+          <div class="form-field">
+            <label for="username" hidden>Full Name</label>
+            <input
+              type="text"
+              id="usernameRegister"
+              placeholder="Full Name"
+              class="input_field"
+              name="name"
+              required
+              minlength="3"
+              maxlength="100"
+            />
+          </div>
+		    <div class="form-field">
+				  <label for="email" hidden>Email Address</label>
+				  <input
+				type="email"
+				id="emailRegister"
+				placeholder="email@address.com"
+        class="input_field"
+          required
+				/>
+          </div>
+          <div class="form-field">
+            <label for="password1" hidden>Password</label>
+            <input
+              type="password"
+              id="passwordRegister"
+              placeholder="Password(Min. 8 characters)"
+              class="input_field"
+              required
+       
+            />
+          </div>
+          <div class="form-field">
+            <label for="password2" hidden>Confirm Password</label>
+            <input
+              type="password"
+              id="passwordRegisterRepeat"
+              placeholder="Confirm Password"
+              name="password"
+              class="input_field"
+              required
+            />
+    </div>
+  </div>
+    <button type="submit" class="btn btn--green" id="registerBtn">Registrer</button>
+  </form>
+	<a href="/frontend/index.html" class="link--black">Back to home</a>
+  </section>	     
+</main>
+<script src="script/header.js"></script>
+<script src="script/register.js"></script>
+</body>
+</html>

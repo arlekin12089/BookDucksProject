@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+		integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="styles/styles.css">
+	<title>Bookducks</title>
+</head>
+<body>
+<header class="header">
+		<div class="container">
+			<div class="header__inner">
+				<div class="logo">
+					<a href="../frontend/index.html">
+						<img src="../frontend/img/duck-logo.jpg" alt="Bookducks logo">
+					</a>
+				</div>
+				<div class="add-buttons">
+					<span id="addBookPage" class="btn btn--green">
+						<i class="fa fa-book" aria-hidden="true"></i> Add book
+					</span>
+					<span id="addAudioBookPage" class="btn btn--green">
+						<i class="fa fa-file-audio-o" aria-hidden="true"></i>Add audio-book
+					</span>
+				</div>
+				<div class="header__dropdown">
+					<button id="userProfile">
+						<i class="fa fa-user" aria-hidden="true"></i>
+					</button>
+					<div class="dropdown-content">
+						<p class="userName"></p>
+						<a href="register.html" class="register-link">Register</a>
+						<a href="login.html" class="login-link">Log In</a>
+						<a href="#" class="logout-link">Log Out</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+<main class="main">
+    <section class="login__wrapper">
+  	  <h1 class="login_text">Log In</h1>
+      <form class="login_form">
+          <div class="form-field">
+            <label for="login_email" hidden>E-mail</label>
+            <input
+              type="email"
+              name="email"
+              id="login_email"
+              class="input_field"
+              placeholder="E-mail"
+              autocomplete="email"
+              />
+          </div>
+          <div class="form-field">
+            <label for="login_password" hidden>Password</label>
+            <input
+              type="password"
+              name="password"
+              id="login_password"
+              class="input_field"
+              placeholder="Password"
+              />
+          </div>
+          <div class="form-footer">
+            <input type="submit" value="Log in" class="btn btn--green" id="login_btn"/>
+            <div class="login_linksContainer">
+              <a href="register.html">Register</a>
+            </div>
+          </div>
+        </form>
+        <a href="/frontend/index.html" class="link--black">Back to home</a>
+  </section>
+	</main>
+	<script src="script/login.js"></script>
+</body>
+</html>
