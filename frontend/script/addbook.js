@@ -17,11 +17,12 @@ const addBook = async () => {
   let cover = document.getElementById("bookCover").files;
   let imgData = new FormData();
   imgData.append("files", cover[0]);
-if(title.length  === 0 || author.length=== 0 || pages.length < 1|| genres === 0 || rating.length === 0 || cover === undefined){
+  if ( title.length === 0 || author.length === 0 || pages.length < 1 || genres === 0 || rating.length === 0 ) {
 	alert('Please fill the all fields!');
 	return true;
 	}
   else{
+    if ( cover.length !== 0 ) {
   await axios
     .post("http://localhost:1337/api/upload", imgData, {
       headers: {
@@ -52,12 +53,36 @@ if(title.length  === 0 || author.length=== 0 || pages.length < 1|| genres === 0 
     });
 	return false;
 	
-	}
+    } else {
+      axios.post(
+        "http://localhost:1337/api/books",
+        {
+          data: {
+            title: title,
+            author: author,
+            numPages: pages,
+            rating: rating,
+            cover: 64,
+            genres: genres,
+            userId: user
+          },
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${JSON.parse( localStorage.getItem( "loginData" ) ).jwt}`,
+          },
+        }
+      );
+      return false;
+    }
+  }
+
+
 };
 
 addBookBtn.addEventListener("click", async () => {
   let resultBook = await addBook();
-  if(resultBook === false){
+  if ( resultBook != true ) {
     window.location.href = "profile.html";
   }
 });
