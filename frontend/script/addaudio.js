@@ -17,10 +17,11 @@ const addAudioBook = async () => {
   let imgData = new FormData();
   imgData.append("files", cover[0]);
 
-	if(title.length  === 0 || author.length=== 0 || duration ===null || genres === 0 || rating.length === 0 || cover === undefined){
+  if ( title.length === 0 || author.length === 0 || duration === null || genres === 0 || rating.length === 0 ) {
 	alert('Please fill the all fields!');
 	return true;
 	} else {
+    if ( cover.length !== 0 ) {
 	await axios
     .post("http://localhost:1337/api/upload", imgData, {
       headers: {
@@ -53,7 +54,31 @@ const addAudioBook = async () => {
     });
 	return false;
 	
-	}
+    } else {
+      axios.post(
+        "http://localhost:1337/api/audio-books",
+        {
+          data: {
+            title: title,
+            author: author,
+            duration: duration,
+            releaseDate: releaseDate,
+            rating: rating,
+            cover: 64,
+            genres: genres,
+            userId: user,
+          },
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${JSON.parse( localStorage.getItem( "loginData" ) ).jwt}`,
+          },
+        }
+      );
+      return false;
+    }
+  }
+
 
 };
 let addAudioBookForm = document.querySelector(".addAudioBookForm");
@@ -64,8 +89,10 @@ addAudioBookForm.addEventListener("submit", (e) => {
 addAudioBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   let resultAudio = await addAudioBook();
-  if(resultAudio === false){
+  console.log( resultAudio )
+  if ( resultAudio != true ) {
     window.location.href = "profile.html";
+
   }
 
 });
